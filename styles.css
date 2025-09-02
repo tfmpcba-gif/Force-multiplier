@@ -25,6 +25,12 @@ nav{
 .navbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:40px}
+.brand img {
+  height: 40px;       /* lock logo height */
+  width: auto;        /* scale width proportionally */
+  display: block;     /* prevent stray spacing */
+}
+
 nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
 .btn{background:var(--accent);color:#071017;border:0;border-radius:12px;padding:10px 14px;font-weight:700}
 .btn:hover{opacity:.92;text-decoration:none}
