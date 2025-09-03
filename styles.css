@@ -67,3 +67,31 @@ ul.check li:before{content:"✓";position:absolute;left:8px;color:var(--accent);
   .hero .wrap{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
 }
+
+/* Intro splash */
+.intro{
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; place-items: center;
+  background: transparent;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+.intro.hide{ opacity: 0; visibility: hidden; pointer-events: none; }
+
+.intro-orbit{ width: min(90vw, 720px); height: auto; }
+
+/* Orbit animation */
+.satellite{ transform-origin: 0 0; animation: orbit 14s linear infinite; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+
+/* Skip button */
+.intro-skip{
+  position: absolute; top: 16px; right: 16px;
+  background: #00d084; color:#051015; border:0;
+  padding: 8px 12px; border-radius: 999px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+.intro-skip:hover{ opacity: .9 }
+
+@media (prefers-reduced-motion: reduce){
+  .satellite{ animation: none; }
+}
